@@ -10,12 +10,6 @@ import tn.rnu.eniso.fwk.chatclient.service.ChatClientService;
 public class ChatClientApplication implements CommandLineRunner {
 
     private final ChatClientService chatClientService;
-//
-//    static {
-//        System.loadLibrary("chatnative");
-//    }
-//
-//    public native void nativePrintf(String message);
 
     @Autowired
     public ChatClientApplication(ChatClientService chatClientService) {
@@ -29,7 +23,7 @@ public class ChatClientApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (args.length == 0) {
-            System.out.println("Usage :");
+            System.out.println("Usage:");
             System.out.println("java -jar chat-client.jar send --from <sender> --to <receiver> --message <message>");
             System.out.println("java -jar chat-client.jar receive --to <receiver>");
             return;
@@ -70,7 +64,7 @@ public class ChatClientApplication implements CommandLineRunner {
                 break;
 
             default:
-                System.out.println("Commande inconnue : " + command);
+                System.out.println("Commande inconnue: " + command);
                 break;
         }
     }

@@ -28,13 +28,13 @@ public class ChatClientService {
 
             try (CloseableHttpResponse response = client.execute(post)) {
                 int statusCode = response.getCode();
-                System.out.println("Message envoyé avec succès ! Statut : " + statusCode);
+                System.out.println("Message envoyé avec succès avec Statut: " + statusCode);
 
                 String responseBody = EntityUtils.toString(response.getEntity());
-                System.out.println("Réponse du serveur : " + responseBody);
+                System.out.println("Réponse du serveur: " + responseBody);
             }
         } catch (Exception e) {
-            System.err.println("Erreur lors de l’envoi du message : " + e.getMessage());
+            System.err.println("Erreur lors de l’envoi du message: " + e.getMessage());
         }
     }
 
@@ -45,14 +45,14 @@ public class ChatClientService {
 
             try (CloseableHttpResponse response = client.execute(get)) {
                 int statusCode = response.getCode();
-                System.out.println("Statut : " + statusCode);
+                System.out.println("Statut: " + statusCode);
 
                 String responseBody = EntityUtils.toString(response.getEntity());
-                System.out.println("Messages reçus pour " + to + " :");
+                System.out.println("Messages reçus pour " + to + ":");
                 System.out.println(responseBody);
             }
         } catch (Exception e) {
-            System.err.println("Erreur lors de la réception des messages : " + e.getMessage());
+            System.err.println("Erreur lors de la réception des messages: " + e.getMessage());
         }
     }
 }
